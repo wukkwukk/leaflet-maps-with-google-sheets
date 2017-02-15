@@ -86,12 +86,14 @@ $(window).on('load', function() {
 
       // If icon contains '.', assume it's a path to a custom icon,
       // otherwise create a Font Awesome icon
-      var icon = (point['Marker Icon'].indexOf('.') > 0)
-        ? L.icon({iconUrl: point['Marker Icon']})
-        : createMarkerIcon(point['Marker Icon'],
-          'fa',
-          point['Marker Color'].toLowerCase(),
-          point['Marker Icon Color']);
+var icon = L.icon({
+    iconUrl: 'http://www.myiconfinder.com/uploads/iconsets/128-128-40b47fc36cb526a3aa0e0773c4c6d672.png',
+    iconSize: [38, 95],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94]
+});
 
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
