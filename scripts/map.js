@@ -419,21 +419,6 @@ $(window).on('load', function() {
 
     centerAndZoomMap(group);
 
-    // Add polygons to the map
-    if (getSetting('_polygonsGeojsonURL')) {
-      processPolygons();
-      $('input:radio[name="prop"]').change(function() {
-        updatePolygons($(this).val());
-      });
-      $('input:radio[name="prop"][value="0"]').click();
-      togglePolygonLabels();
-    }
-
-    // Add polylines
-    var polylines = mapData.sheets(constants.polylinesSheetName).elements;
-    if (polylines.length > 0) {
-      processPolylines(polylines);
-    }
 
     // Add Mapzen search control
     if (getSetting('_mapSearch') !== 'off') {
